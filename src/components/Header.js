@@ -15,9 +15,7 @@ const Header = () => {
             <NavLink href="../pages/About.js">ABOUT</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/reactstrap/reactstrap">
-              GitHub
-            </NavLink>
+            <NavLink href="../pages/Contact.js">CONTACT</NavLink>
           </NavItem>
         </Nav>
       </NavbarBrand>

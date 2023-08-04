@@ -1,6 +1,7 @@
 import "./App.css";
 import PlantSearch from "./components/PlantSearch";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <PlantSearch />
+      <Footer />
     </div>
   );
 }
