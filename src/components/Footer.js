@@ -1,16 +1,17 @@
-import { NavLink } from "reactstrap";
+import { Container, Col, Row } from "reactstrap";
 import { Twitter, Facebook, Instagram } from "react-bootstrap-icons";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="row d-flex border-bottom">
-          <div className="col">
+      <Container>
+        <Row>
+          <Col xs="6" sm="3" className="text-start">
             <a
               href="https://www.instagram.com/"
               target="_blank"
               rel="noreferrer"
+              className="m-2"
             >
               <Instagram color="white" size={20} className="ml-4" />
             </a>
@@ -18,34 +19,23 @@ const Footer = () => {
               href="https://www.facebook.com/"
               target="_blank"
               rel="noreferrer"
+              className="m-2"
             >
               <Facebook color="white" size={20} className="ml-4" />
             </a>
-            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
-              <Twitter color="white" size={20} className="ml-4" />
+            <a
+              href="https://www.twitter.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="m-2"
+            >
+              <Twitter color="white" size={20} />
             </a>
+          </Col>
 
-            <div className="col">
-              <ul className="nav list-unstyled justify-content-end">
-                <li className="nav-item">
-                  <NavLink href="about.html" className="nav-link text-white">
-                    ABOUT
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    href="../pages/About.js"
-                    className="nav-link text-white"
-                  >
-                    CONTACT
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p className="text-center text-muted mt-3">© 2023 Sprout Company</p>
+          <p className="text-center text-white mt-3">© 2023 Sprout Company</p>
+        </Row>
+      </Container>
     </footer>
   );
 };

@@ -1,4 +1,4 @@
-const PLANTS = [
+export const Plants = [
   {
     Id: 1,
     nameOfPlant: "Snake Plant (Sansevieria)",

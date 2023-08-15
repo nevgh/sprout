@@ -1,4 +1,26 @@
+import { useState } from "react";
+import { Plants } from "../../src/Plants";
+
 const PlantSearch = () => {
+  const [searchedPlant, setSearchedPlant] = useState("");
+  const [filteredPlants, setFilteredPlants] = useState([]);
+
+  const handleInput = (e) => {
+    setSearchedPlant(e.target.value);
+  };
+
+  const handleSearchBtn = () => {
+    const newFilteredPlants = Plants.filter((plant) =>
+      plant.nameOfPlant.toLocaleLowerCase().includes(searchedPlant)
+    );
+    setFilteredPlants(newFilteredPlants);
+  };
+
+  const handleClearAll = () => {
+    setSearchedPlant("");
+    setFilteredPlants([]);
+  };
+
   return (
     <div
       className="container mx-auto"
@@ -11,16 +33,36 @@ const PlantSearch = () => {
         <input
           type="text"
           id="searchInput"
-          value=""
+          defaultValue=""
+          value={searchedPlant}
           className="col form-control"
           placeholder="search your plant.."
+          onChange={handleInput}
         />
-        <button id="searchBtn" className="col col-2 btn btn-light ms-1">
+
+        <button
+          id="searchBtn"
+          onClick={handleSearchBtn}
+          className="col col-2 btn btn-light ms-1"
+          disabled={searchedPlant === "" && true}
+        >
           Search
         </button>
-        <button id="clearBtn" className="col col-2 btn btn-light ms-1">
+
+        <button
+          onClick={handleClearAll}
+          id="clearBtn"
+          className="col col-2 btn btn-light ms-1"
+        >
           Clear Result
         </button>
+      </div>
+      <div>
+        {filteredPlants.map((plant) => (
+          <ul>
+            <li key={plant.id}>{plant.nameOfPlant}</li>
+          </ul>
+        ))}
       </div>
     </div>
   );
