@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import SearchResult from "./components/SearchResult";
+import PlantDetails from "./components/PlantDetails";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/searchResult" element={<SearchResult />} />
+        <Route path="/plantdetails/:plantId" element={<PlantDetails />} />
       </Routes>
 
       <Footer />

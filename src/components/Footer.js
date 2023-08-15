@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col xs="6" sm="3" className="text-start">
+          <Col xs={{ size: 4, offset: 1 }} sm="2">
             <a
               href="https://www.instagram.com/"
               target="_blank"

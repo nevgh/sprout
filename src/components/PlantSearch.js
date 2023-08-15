@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plants } from "../../src/Plants";
+import { Link } from "react-router-dom";
 
 const PlantSearch = () => {
   const [searchedPlant, setSearchedPlant] = useState("");
@@ -16,7 +17,7 @@ const PlantSearch = () => {
     setFilteredPlants(newFilteredPlants);
   };
 
-  const handleClearAll = () => {
+  const handlesClearAll = () => {
     setSearchedPlant("");
     setFilteredPlants([]);
   };
@@ -50,7 +51,7 @@ const PlantSearch = () => {
         </button>
 
         <button
-          onClick={handleClearAll}
+          onClick={handlesClearAll}
           id="clearBtn"
           className="col col-2 btn btn-light ms-1"
         >
@@ -61,6 +62,11 @@ const PlantSearch = () => {
         {filteredPlants.map((plant) => (
           <ul>
             <li key={plant.id}>{plant.nameOfPlant}</li>
+            <Link to={`/plantdetails/${plant.Id}`}>
+              <button className="col col-2 btn btn-light ms-1">
+                More Info
+              </button>
+            </Link>
           </ul>
         ))}
       </div>
