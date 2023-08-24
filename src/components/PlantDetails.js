@@ -1,6 +1,11 @@
 import { Card, CardText, Container, Row, Col } from "reactstrap";
 import { useParams } from "react-router-dom";
 import { Plants } from "../Plants";
+import {
+  DropletFill,
+  ThermometerHigh,
+  HouseDoorFill,
+} from "react-bootstrap-icons";
 
 const PlantDetails = () => {
   const { plantId } = useParams();
@@ -9,20 +14,56 @@ const PlantDetails = () => {
   return (
     <Container>
       <Row>
-        <h1>{plant.nameOfPlant}</h1>
+        <h2 style={{ margin: "5rem auto", color: "white" }}>
+          {plant.nameOfPlant}
+        </h2>
         <Col>
-          <Card>
-            <CardText> water: {plant.water}</CardText>
+          <Card
+            style={{
+              width: "250px",
+              height: "250px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <DropletFill size={50} style={{ color: "#71cb93" }} />
+            <CardText style={{ marginTop: "10px" }}>{plant.water}</CardText>
           </Card>
         </Col>
         <Col>
-          <Card>
-            <CardText>temperature: {plant.temperature}</CardText>
+          <Card
+            style={{
+              width: "250px",
+              height: "250px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ThermometerHigh size={50} style={{ color: "#71cb93" }} />
+            <CardText style={{ marginTop: "10px" }}>
+              {plant.temperature}
+            </CardText>
           </Card>
         </Col>
         <Col>
-          <Card>
-            <CardText>placement: {plant.indoorOutdoor}</CardText>
+          <Card
+            style={{
+              width: "250px",
+              height: "250px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <HouseDoorFill size={50} style={{ color: "#71cb93" }} />
+            <CardText style={{ marginTop: "10px" }}>
+              {plant.indoorOutdoor}
+            </CardText>
           </Card>
         </Col>
       </Row>

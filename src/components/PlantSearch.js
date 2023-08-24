@@ -25,7 +25,7 @@ const PlantSearch = () => {
   return (
     <div
       className="container mx-auto"
-      style={{ width: "700px", marginTop: "10rem" }}
+      // style={{ width: "700px", marginTop: "10rem" }}
     >
       <div className="row text-center mb-2">
         <h3>explore your plant!</h3>
@@ -50,17 +50,19 @@ const PlantSearch = () => {
           Search
         </button>
 
-        <button
-          onClick={handlesClearAll}
-          id="clearBtn"
-          className="col col-2 btn btn-light ms-1"
-        >
-          Clear Result
-        </button>
+        {filteredPlants.length > 0 && (
+          <button
+            onClick={handlesClearAll}
+            id="clearBtn"
+            className="col col-2 btn btn-light ms-1"
+          >
+            Clear Result
+          </button>
+        )}
       </div>
       <div>
         {filteredPlants.map((plant) => (
-          <ul>
+          <ul className="list-unstyled">
             <li key={plant.id}>{plant.nameOfPlant}</li>
             <Link to={`/plantdetails/${plant.Id}`}>
               <button className="col col-2 btn btn-light ms-1">
