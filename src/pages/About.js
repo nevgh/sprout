@@ -1,4 +1,4 @@
-import { Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
+import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import leaf from "../images/green-leaf.png";
 
 const About = () => {
