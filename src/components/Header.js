@@ -21,7 +21,7 @@ const Header = () => {
       <NavbarBrand className="ms-5" href="/">
         <img src={SproutLogo} alt="sprout logo" className="float-start" />
       </NavbarBrand>
-      <NavbarToggler onClick={toggle}></NavbarToggler>
+      <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ms-auto" navbar>
           <NavItem>

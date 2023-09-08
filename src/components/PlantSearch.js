@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Plants } from "../../src/Plants";
 import { Link } from "react-router-dom";
+import {
+  Container,
+  Col,
+  Row,
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+} from "reactstrap";
 
 const PlantSearch = () => {
   const [searchedPlant, setSearchedPlant] = useState("");
@@ -23,20 +32,17 @@ const PlantSearch = () => {
   };
 
   return (
-    <div
-      className="container mx-auto"
-      // style={{ width: "700px", marginTop: "10rem" }}
-    >
-      <div className="row text-center mb-2">
+    <Container>
+      <Col className="row text-center mb-5 mt-5">
         <h3>explore your plant!</h3>
-      </div>
-      <div className="row justify-content-center">
+      </Col>
+      <Row className="justify-content-center">
         <input
           type="text"
           id="searchInput"
           defaultValue=""
           value={searchedPlant}
-          className="col form-control"
+          className="col col-6 border-0"
           placeholder="search your plant.."
           onChange={handleInput}
         />
@@ -59,20 +65,25 @@ const PlantSearch = () => {
             Clear Result
           </button>
         )}
-      </div>
-      <div>
+      </Row>
+      <Col>
         {filteredPlants.map((plant) => (
-          <ul className="list-unstyled">
-            <li key={plant.id}>{plant.nameOfPlant}</li>
+          <Card className="rounded">
+            <div className="d-flex">
+              <CardImg src={plant.img} className="w-25" />
+              <CardBody className="ml-3">
+                <CardTitle key={plant.id}>{plant.nameOfPlant}</CardTitle>
+              </CardBody>
+            </div>
             <Link to={`/plantdetails/${plant.Id}`}>
-              <button className="col col-2 btn btn-light ms-1">
+              <button className="col col-2 btn btn-light ms-1 mt-2">
                 More Info
               </button>
             </Link>
-          </ul>
+          </Card>
         ))}
-      </div>
-    </div>
+      </Col>
+    </Container>
   );
 };
 

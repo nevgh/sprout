@@ -23,7 +23,6 @@
   color: #61dafb;
 } */
 
-
 .navbar-brand {
   max-width: 4rem;
   margin-right: 2rem;
@@ -35,8 +34,12 @@
   margin-right: 2rem;
   max-width: 4rem;
 }
-.footer {
-  padding: 20px 0;
-  margin-top: 2rem;
-}
 
+.footer {
+  background-color: #71cb93;
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}

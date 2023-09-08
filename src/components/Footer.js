@@ -3,7 +3,7 @@ import { Twitter, Facebook, Instagram } from "react-bootstrap-icons";
 
 const Footer = () => {
   return (
-    <footer className="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer className="footer">
       <Container>
         <Row>
           <Col className="col-md-4 d-flex align-items-center text-white">

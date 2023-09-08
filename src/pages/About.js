@@ -1,5 +1,6 @@
 import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import leaf from "../images/green-leaf.png";
+import Footer from "../components/Footer";
 
 const About = () => {
   return (
@@ -50,6 +51,7 @@ const About = () => {
           </CardText>
         </CardBody>
       </Card>
+      <Footer />
     </div>
   );
 };
