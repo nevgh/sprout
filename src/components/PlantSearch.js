@@ -9,6 +9,7 @@ import {
   CardImg,
   CardBody,
   CardTitle,
+  CardImgOverlay,
 } from "reactstrap";
 
 const PlantSearch = () => {
@@ -66,20 +67,27 @@ const PlantSearch = () => {
           </button>
         )}
       </Row>
-      <Col>
+
+      <Col
+        style={{
+          width: "500px",
+          margin: "1rem auto",
+        }}
+      >
         {filteredPlants.map((plant) => (
-          <Card className="rounded">
-            <div className="d-flex">
-              <CardImg src={plant.img} className="w-25" />
-              <CardBody className="ml-3">
-                <CardTitle key={plant.id}>{plant.nameOfPlant}</CardTitle>
-              </CardBody>
-            </div>
-            <Link to={`/plantdetails/${plant.Id}`}>
-              <button className="col col-2 btn btn-light ms-1 mt-2">
-                More Info
-              </button>
-            </Link>
+          <Card inverse className="square bg-light rounded mb-2">
+            <CardImg src={plant.img} style={{ height: 270 }} />
+            <CardImgOverlay>
+              <CardTitle
+                key={plant.id}
+                style={{ fontSize: "2rem", backdropFilter: "blur(20px)" }}
+              >
+                {plant.nameOfPlant}
+              </CardTitle>
+              <Link to={`/plantdetails/${plant.Id}`}>
+                <button className="btn btn-light ms-1 mt-2">More Info</button>
+              </Link>
+            </CardImgOverlay>
           </Card>
         ))}
       </Col>
